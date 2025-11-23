@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>tic-tac-toe</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="tic-tac-toe">
+      <h1>tic-tac-toe</h1>
+      <div class="board">
+          <button class="square" data-cell="1" type="button"></button>
+          <button class="square" data-cell="2" type="button"></button>
+          <button class="square" data-cell="3" type="button"></button>
+          <button class="square" data-cell="4" type="button"></button>
+          <button class="square" data-cell="5" type="button"></button>
+          <button class="square" data-cell="6" type="button"></button>
+          <button class="square" data-cell="7" type="button"></button>
+          <button class="square" data-cell="8" type="button"></button>
+          <button class="square" data-cell="9" type="button"></button>
+      </div>
+      <div class="score">
+        <h2>Score</h2>
+        <div class="score-row">
+          <span>X: <strong id="scoreX">0</strong></span>
+          <span>O: <strong id="scoreX">0</strong></span>
+        </div>
+      </div>
+      <div class="game-status" id="gameStatus">Player X's Turn</div>
+      <button id="resetButton">Reset Game</button>
+    </div>
+  </body>
+</html>
