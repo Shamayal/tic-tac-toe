@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Press+Start+2P&display=swap');
 
+/* Page Setup */
 * {
   margin: 0;
   padding: 0;
@@ -20,9 +21,40 @@ h1, h2 {
   color: #233D4D;
 }
 
+#tic-tac-toe {
+  text-align: center;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+/* Board Layout */
 .board {
   display: grid;
   grid-template-columns: repeat(3, 100px);
-  gap: 5px;
+  gap: 10px;
+  justify-content: center;
   margin: 20px auto;
 }
+
+/* Game Squares */
+.square {
+  width: 100px;
+  height: 100px;
+  font-size: 2.5rem;
+  font-weight: bold;
+  cursor: pointer;
+  background: #fafafa;
+  border: 2px solid #333;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.square:hover {
+  background: #e6e6e6;
+}
+
+/* Score Styling */
+/* Status */
+/* Reset Button */
