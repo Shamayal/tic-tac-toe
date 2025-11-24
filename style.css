@@ -9,7 +9,7 @@
   --square-hover: #A85CF9;
   --text-color: #3DB4BA;
   --playerX-color: #F8FF5E; 
-  --playerO-color: #00E5FF; 
+  --playerO-color: #00FF9C; 
   --button-bg: #3DB4BA;
   --button-hover: #2A8F97;
   --winning-glow: #F8FF5E;
@@ -81,6 +81,17 @@ h1, h2 {
   transform: scale(1.05);
 }
 
+/* Player Colours */
+.square.x {
+  color: var(--playerX-color);
+  text-shadow: 0 0 8px var(--playerX-color), 0 0 16px var(--playerX-color);
+}
+
+.square.o {
+  color: var(--playerO-color);
+  text-shadow: 0 0 8px var(--playerO-color), 0 0 16px var(--playerO-color);
+}
+
 /* Score Styling */
 .score {
   margin: 15px 0;
@@ -94,8 +105,20 @@ h1, h2 {
   justify-content: center;
   gap: 40px;
   font-size: 1.2rem;
-  color: #3DB4BA;
-  text-shadow: 0 0 5px #3DB4BA;
+}
+
+.score-row span {
+  color: white;
+}
+
+#scoreX {
+  color: var(--playerX-color);
+  text-shadow: 0 0 6px var(--playerX-color);
+}
+
+#scoreO {
+  color: var(--playerO-color);
+  text-shadow: 0 0 6px var(--playerO-color);
 }
 
 /* Status */
@@ -103,7 +126,7 @@ h1, h2 {
   margin: 15px 0;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #3DB4BA;
+  color: var(--text-color);
 }
 
 /* Reset Button */
