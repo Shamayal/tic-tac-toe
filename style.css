@@ -33,14 +33,14 @@ body {
 
 h1, h2 {
   font-family: 'Press Start 2P', cursive;
-  color: #3DB4bA;
-  text-shadow: 0 0 5px #3DB4BA, 0 0 10px #3DB4BA;
+  color: var(--text-color);
+  text-shadow: 0 0 5px var(--text-color), 0 0 10px var(--text-color);
 }
 
 #tic-tac-toe {
   text-align: center;
   padding: 20px;
-  background: black;
+  background: var(--board-bg);
   border-radius: 12px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -52,6 +52,12 @@ h1, h2 {
   gap: 10px;
   justify-content: center;
   margin: 20px auto;
+  border: 3px solid var(--board-border);
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 0 20px var(--board-border)55;
+  background: #00000080;
+  position: relative;
 }
 
 /* Game Squares */
@@ -61,8 +67,8 @@ h1, h2 {
   font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
-  background: #772A93;
-  border: 2px solid #3DB4BA;
+  background: var(--square-bg);
+  border: 2px solid var(--board-border);
   border-radius: 12px;
   color: #FFFFFF;
   text-shadow: 0 0 5px #FFFFFF;
@@ -70,8 +76,8 @@ h1, h2 {
 }
 
 .square:hover {
-  background: #A85CF9;
-  box-shadow: 0 0 10px #A85CF9, 0 0 20px #A85CF9, 0 0 40px #3DB4BA;
+  background: var(--square-hover);
+  box-shadow: 0 0 10px var(--square-hover), 0 0 20px var(--square-hover), 0 0 40px var(--text-color);
   transform: scale(1.05);
 }
 
@@ -106,20 +112,16 @@ h1, h2 {
   font-size: 1rem;
   cursor: pointer;
   border: none;
-  background: #3DB4BA;
-  color: white;
+  background: var(--button-bg);
+  color: black;
+  font-weight: bold;
   border-radius: 12px;
-  text-shadow: 0 0 5px #3DB4BA;
+  text-shadow: 0 0 5px var(--text-color);
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 #resetButton:hover {
-  background: #2A8F97;
-  box-shadow: 0 0 10px #3DB4BA, 0 0 20px #3DB4BA;
+  background: var(--button-hover);
+  box-shadow: 0 0 10px var(--text-color), 0 0 20px var(--text-color);
   transform: scale(1.05);
 }
-/* #resetButton {
-  background: #F8FF5E;
-  color: black;
-  font-weight: bold;
-} */
