@@ -9,7 +9,7 @@
 }
 
 body {
-  background: #FCCA46;
+  background: linear-gradient(135deg, #1A0F2A, #2A003E);
   height: 100dvh;
   display: flex;
   justify-content: center;
@@ -19,12 +19,13 @@ body {
 h1, h2 {
   font-family: 'Press Start 2P', cursive;
   color: #3DB4bA;
+  text-shadow: 0 0 5px #3DB4BA, 0 0 10px #3DB4BA;
 }
 
 #tic-tac-toe {
   text-align: center;
   padding: 20px;
-  background: white;
+  background: black;
   border-radius: 12px;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
@@ -45,14 +46,18 @@ h1, h2 {
   font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
-  background: white;
-  border: 2px solid #333;
-  border-radius: 8px;
-  transition: background 0.2s;
+  background: #772A93;
+  border: 2px solid #3DB4BA;
+  border-radius: 12px;
+  color: #FFFFFF;
+  text-shadow: 0 0 5px #FFFFFF;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .square:hover {
-  background: #772A93;
+  background: #A85CF9;
+  box-shadow: 0 0 10px #A85CF9, 0 0 20px #A85CF9, 0 0 40px #3DB4BA;
+  transform: scale(1.05);
 }
 
 /* Score Styling */
@@ -63,8 +68,10 @@ h1, h2 {
 .score-row {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   font-size: 1.2rem;
+  color: #3DB4BA;
+  text-shadow: 0 0 5px #3DB4BA;
 }
 
 /* Status */
@@ -72,6 +79,7 @@ h1, h2 {
   margin: 15px 0;
   font-size: 1.2rem;
   font-weight: bold;
+  color: #3DB4BA;
 }
 
 /* Reset Button */
@@ -80,12 +88,15 @@ h1, h2 {
   font-size: 1rem;
   cursor: pointer;
   border: none;
-  background: #333;
+  background: #3DB4BA;
   color: white;
-  border-radius: 8px;
-  transition: background 0.2s;
+  border-radius: 12px;
+  text-shadow: 0 0 5px #3DB4BA;
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 #resetButton:hover {
-  background: #555;
+  background: #2A8F97;
+  box-shadow: 0 0 10px #3DB4BA, 0 0 20px #3DB4BA;
+  transform: scale(1.05);
 }
