@@ -18,7 +18,7 @@ body {
 
 h1, h2 {
   font-family: 'Press Start 2P', cursive;
-  color: #233D4D;
+  color: #3DB4bA;
 }
 
 #tic-tac-toe {
@@ -45,14 +45,14 @@ h1, h2 {
   font-size: 2.5rem;
   font-weight: bold;
   cursor: pointer;
-  background: #fafafa;
+  background: white;
   border: 2px solid #333;
   border-radius: 8px;
   transition: background 0.2s;
 }
 
 .square:hover {
-  background: #e6e6e6;
+  background: #772A93;
 }
 
 /* Score Styling */
