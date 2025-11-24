@@ -1,27 +1,61 @@
-const squares = document.querySelectorAll('.square');
+const squares = document.querySelectorAll(".square");
 
-const scoreX = document.getElementById('scoreX');
-const scoreO = document.getElementById('scoreO');
+const scoreX = document.getElementById("scoreX");
+const scoreO = document.getElementById("scoreO");
 
-const gameStatus = document.getElementById('gameStatus');
+const gameStatus = document.getElementById("gameStatus");
+let gameActive = true;
 
-const resetButton = document.getElementById('resetButton');
+const resetButton = document.getElementById("resetButton");
 
-let boardState = ['', '', '', '', '', '', '', '', ''];
+let boardState = ["", "", "", "", "", "", "", "", ""];
 
-let currentPlayer = 'X';
+let currentPlayer = "X";
 
 let scores = {
   X: 0,
-  O: 0
+  O: 0,
 };
 
+const winPatterns = [
+  // Rows
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  // Columns
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  // Diagonals
+  [0, 4, 8],
+  [2, 4, 6],
+];
+
 squares.forEach((square, index) => {
-  square.addEventListener('click', () => {
+  square.addEventListener("click", () => {
     console.log(`Square ${index + 1} clicked!`);
   });
 });
 
+// function to add marks on squares
+
+// function to add win/tie
+
+// function to update score
+
+// function to change game status
+function changePlayer() {
+  currentPlayer = currentPlayer === "X" ? "O" : "X";
+  gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
+}
+
+// function to reset game - scores 0:0, board clean
 resetButton.addEventListener("click", () => {
-  console.log('Reset Button Clicked!');
+  console.log("Reset Button Clicked!");
+  boardState = ["", "", "", "", "", "", "", "", ""];
+  gameActive = true;
+  currentPlayer = "X";
+  gameStatus.textContent = "Player X's Turn";
+  scores.X = 0;
+  scores.Y = 0;
 });
