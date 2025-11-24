@@ -35,17 +35,16 @@ const winPatterns = [
 squares.forEach((square, index) => {
   square.addEventListener("click", () => {
     console.log(`Square ${index + 1} clicked by ${currentPlayer}`);
-    if (currentPlayer === "X") {
-      square.innerText = "X";
-      boardState[index] = "X";
-      console.log(boardState);
-      changePlayer();
-    } else {
-      square.innerText = "O";
-      boardState[index] = "O";
-      console.log(boardState);
-      changePlayer();
-    }
+
+    // Prevent overwriting on a square
+    if (boardState[index] !== "" || !gameActive) return;
+
+    square.innerText = currentPlayer;
+    boardState[index] = currentPlayer;
+    console.log(boardState);
+    // TODO: check if player won
+    changePlayer();
+   
   });
 });
 
