@@ -82,11 +82,6 @@ resetButton.addEventListener("click", () => {
   currentPlayer = "X";
   gameStatus.textContent = "Player X's Turn";
 
-  scores.X = 0;
-  scores.O = 0;
-  scoreX.textContent = "0";
-  scoreO.textContent = "0";
-
   gameActive = true;
 });
 
