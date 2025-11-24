@@ -56,5 +56,36 @@ h1, h2 {
 }
 
 /* Score Styling */
+.score {
+  margin: 15px 0;
+}
+
+.score-row {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  font-size: 1.2rem;
+}
+
 /* Status */
+.game-status {
+  margin: 15px 0;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
 /* Reset Button */
+#resetButton {
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+  border: none;
+  background: #333;
+  color: white;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+#resetButton:hover {
+  background: #555;
+}
