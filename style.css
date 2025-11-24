@@ -1,5 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Press+Start+2P&display=swap');
 
+/* Colour Palette */
+:root {
+  --bg-color: #1A0F2A;
+  --board-bg: #000000;
+  --board-border: #3DB4BA;
+  --square-bg: #772A93;
+  --square-hover: #A85CF9;
+  --text-color: #3DB4BA;
+  --playerX-color: #F8FF5E; 
+  --playerO-color: #00E5FF; 
+  --button-bg: #3DB4BA;
+  --button-hover: #2A8F97;
+  --winning-glow: #F8FF5E;
+}
+
 /* Page Setup */
 * {
   margin: 0;
@@ -103,3 +118,8 @@ h1, h2 {
   box-shadow: 0 0 10px #3DB4BA, 0 0 20px #3DB4BA;
   transform: scale(1.05);
 }
+/* #resetButton {
+  background: #F8FF5E;
+  color: black;
+  font-weight: bold;
+} */
