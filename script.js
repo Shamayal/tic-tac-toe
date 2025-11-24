@@ -39,9 +39,16 @@ squares.forEach((square, index) => {
     // Prevent overwriting on a square
     if (boardState[index] !== "" || !gameActive) return;
 
+    // Set the text
     square.innerText = currentPlayer;
+
+    // Add the class for the player's colour
+    square.classList.add(currentPlayer.toLowerCase());
+
+    // Update the board state
     boardState[index] = currentPlayer;
     console.log(boardState);
+
     // TODO: check if player won
     changePlayer();
    
@@ -49,6 +56,9 @@ squares.forEach((square, index) => {
 });
 
 // function to add win/tie
+function checkWin() {
+
+}
 
 // function to update score
 
@@ -79,3 +89,5 @@ resetButton.addEventListener("click", () => {
 
   gameActive = true;
 });
+
+// TODO: check if win/tie and strike outerHeight, update score
