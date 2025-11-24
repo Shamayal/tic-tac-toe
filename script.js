@@ -37,9 +37,13 @@ squares.forEach((square, index) => {
     console.log(`Square ${index + 1} clicked by ${currentPlayer}`);
     if (currentPlayer === "X") {
       square.innerText = "X";
+      boardState[index] = "X";
+      console.log(boardState);
       changePlayer();
     } else {
       square.innerText = "O";
+      boardState[index] = "O";
+      console.log(boardState);
       changePlayer();
     }
   });
@@ -49,19 +53,20 @@ squares.forEach((square, index) => {
 
 // function to update score
 
-// function to change game status
+// Change Players
 function changePlayer() {
   currentPlayer = currentPlayer === "X" ? "O" : "X";
   gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
 }
 
-// function to reset game - scores 0:0, board clean
+// Reset Game
 resetButton.addEventListener("click", () => {
   console.log("Reset Button Clicked!");
 
   boardState = ["", "", "", "", "", "", "", "", ""];
+  console.log(boardState);
 
-  squares.forEach(square => {
+  squares.forEach((square) => {
     square.innerText = "";
   });
 
