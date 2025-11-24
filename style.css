@@ -107,18 +107,19 @@ h1, h2 {
   font-size: 1.2rem;
 }
 
-.score-row span {
-  color: white;
-}
-
-#scoreX {
+.score-row span:nth-child(1) {
   color: var(--playerX-color);
   text-shadow: 0 0 6px var(--playerX-color);
 }
 
-#scoreO {
+.score-row span:nth-child(2) {
   color: var(--playerO-color);
   text-shadow: 0 0 6px var(--playerO-color);
+}
+
+.score-row span strong {
+  color: white;
+  text-shadow: 0 0 3px white;
 }
 
 /* Status */
