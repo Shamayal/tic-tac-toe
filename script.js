@@ -31,13 +31,16 @@ const winPatterns = [
   [2, 4, 6],
 ];
 
+// function to add marks on squares
 squares.forEach((square, index) => {
   square.addEventListener("click", () => {
     console.log(`Square ${index + 1} clicked!`);
+    if (currentPlayer === "X") {
+      square.innerText = "X";
+      changePlayer();
+    }
   });
 });
-
-// function to add marks on squares
 
 // function to add win/tie
 
