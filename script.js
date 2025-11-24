@@ -58,10 +58,20 @@ function changePlayer() {
 // function to reset game - scores 0:0, board clean
 resetButton.addEventListener("click", () => {
   console.log("Reset Button Clicked!");
+
   boardState = ["", "", "", "", "", "", "", "", ""];
-  gameActive = true;
+
+  squares.forEach(square => {
+    square.innerText = "";
+  });
+
   currentPlayer = "X";
   gameStatus.textContent = "Player X's Turn";
+
   scores.X = 0;
-  scores.Y = 0;
+  scores.O = 0;
+  scoreX.textContent = "0";
+  scoreO.textContent = "0";
+
+  gameActive = true;
 });
