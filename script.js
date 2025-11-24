@@ -60,7 +60,11 @@ function checkWin() {
 
 }
 
-// function to update score
+// Update score
+function updateScore() {
+  scoreX.textContent = scores.X;
+  scoreO.textContent = scores.O;
+}
 
 // Change Players
 function changePlayer() {
