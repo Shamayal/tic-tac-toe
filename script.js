@@ -31,6 +31,10 @@ const winPatterns = [
   [2, 4, 6],
 ];
 
+const xWinsSection = document.querySelector(".X-wins");
+const oWinsSection = document.querySelector(".O-wins");
+const drawSection = document.querySelector(".draw");
+
 // function to add marks on squares
 squares.forEach((square, index) => {
   square.addEventListener("click", () => {
@@ -109,3 +113,11 @@ resetButton.addEventListener("click", () => {
 
   gameActive = true;
 });
+
+function showDisplaySection(section) {
+  [xWinsSection, oWinsSection, drawSection].forEach(
+    (section) => (section.style.display = "none")
+  );
+
+  section.style.display = "flex";
+}

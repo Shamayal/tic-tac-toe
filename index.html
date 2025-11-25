@@ -6,23 +6,34 @@
     <title>tic-tac-toe</title>
     <link rel="stylesheet" href="style.css" />
     <script src="script.js" defer></script>
-    <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Press+Start+2P&display=swap" rel="stylesheet">
-    
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Press+Start+2P&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div id="tic-tac-toe">
       <h1>tic-tac-toe</h1>
-      <div class="board">
-          <button class="square" data-cell="1" type="button"></button>
-          <button class="square" data-cell="2" type="button"></button>
-          <button class="square" data-cell="3" type="button"></button>
-          <button class="square" data-cell="4" type="button"></button>
-          <button class="square" data-cell="5" type="button"></button>
-          <button class="square" data-cell="6" type="button"></button>
-          <button class="square" data-cell="7" type="button"></button>
-          <button class="square" data-cell="8" type="button"></button>
-          <button class="square" data-cell="9" type="button"></button>
-      </div>
+      <section class="board">
+        <button class="square" data-cell="1" type="button"></button>
+        <button class="square" data-cell="2" type="button"></button>
+        <button class="square" data-cell="3" type="button"></button>
+        <button class="square" data-cell="4" type="button"></button>
+        <button class="square" data-cell="5" type="button"></button>
+        <button class="square" data-cell="6" type="button"></button>
+        <button class="square" data-cell="7" type="button"></button>
+        <button class="square" data-cell="8" type="button"></button>
+        <button class="square" data-cell="9" type="button"></button>
+      </section>
+      <section class="X-wins" style="display: none">
+        <h1>X</h1>
+      </section>
+      <section class="O-wins" style="display: none">
+        <h1>O</h1>
+      </section>
+      <section class="draw" style="display: none">
+        <h1>XO</h1>
+      </section>
       <div class="score">
         <h2>Score</h2>
         <div class="score-row">
