@@ -68,18 +68,27 @@ squares.forEach((square, index) => {
 
 // function to add win/tie
 function checkWinOrDraw() {
-  // for (let pattern of winPatterns) {
-  //   const [a, b, c] = pattern;
-  //   if (boardState[a] === currentPlayer &&
-  //       boardState[b] === currentPlayer &&
-  //       boardState[c] === currentPlayer) {
-  //         return true;
-  //   }
-  // }
-  console.log('checking')
-  if (boardState.every(square => square !== "")) {
+  for (let pattern of winPatterns) {
+    const [a, b, c] = pattern;
+    if (
+      boardState[a] === currentPlayer &&
+      boardState[b] === currentPlayer &&
+      boardState[c] === currentPlayer
+    ) {
+      gameStatus.textContent = `${currentPlayer} wins!`;
+      gameActive = false;
+      showDisplaySection(xWinsSection);
+      scores[currentPlayer]++; 
+      updateScore();
+      return true;
+    }
+  }
+
+  console.log("checking");
+  if (boardState.every((square) => square !== "")) {
     gameStatus.textContent = "It's a Tie!";
     gameActive = false;
+    showDisplaySection(drawSection);
     return true;
   }
   return false;
