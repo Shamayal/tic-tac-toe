@@ -35,6 +35,8 @@ const xWinsSection = document.querySelector(".X-wins");
 const oWinsSection = document.querySelector(".O-wins");
 const drawSection = document.querySelector(".draw");
 
+const strikeLine = document.querySelector(".strike-line");
+
 // function to add marks on squares
 squares.forEach((square, index) => {
   square.addEventListener("click", () => {
@@ -51,14 +53,6 @@ squares.forEach((square, index) => {
 
     // Update the board state
     boardState[index] = currentPlayer;
-    console.log(boardState);
-
-    // TODO: check if player won
-    // if (checkWinOrDraw()) {
-    //   updateScore();
-    //   gameActive = false;
-    //   return;
-    // }
 
     if (checkWinOrDraw()) return;
     // Change player if game continues
@@ -108,10 +102,7 @@ function changePlayer() {
 
 // Reset Game
 resetButton.addEventListener("click", () => {
-  console.log("Reset Button Clicked!");
-
   boardState = ["", "", "", "", "", "", "", "", ""];
-  console.log(boardState);
 
   squares.forEach((square) => {
     square.innerText = "";
@@ -119,7 +110,6 @@ resetButton.addEventListener("click", () => {
 
   currentPlayer = "X";
   gameStatus.textContent = "Player X's Turn";
-
   gameActive = true;
 });
 
