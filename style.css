@@ -1,18 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Press+Start+2P&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Press+Start+2P&display=swap");
 
 /* Colour Palette */
 :root {
-  --bg-color: #1A0F2A;
+  --bg-color: #1a0f2a;
   --board-bg: #000000;
-  --board-border: #3DB4BA;
-  --square-bg: #772A93;
-  --square-hover: #A85CF9;
-  --text-color: #3DB4BA;
-  --playerX-color: #F8FF5E; 
-  --playerO-color: #04ff00; 
-  --button-bg: #3DB4BA;
-  --button-hover: #2A8F97;
-  --winning-glow: #FF1744;
+  --board-border: #3db4ba;
+  --square-bg: #772a93;
+  --square-hover: #a85cf9;
+  --text-color: #3db4ba;
+  --playerX-color: #f8ff5e;
+  --playerO-color: #04ff00;
+  --button-bg: #3db4ba;
+  --button-hover: #2a8f97;
+  --winning-glow: #ff1744;
 }
 
 /* Page Setup */
@@ -20,19 +20,20 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family:'Lato', sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 body {
-  background: linear-gradient(135deg, #1A0F2A, #2A003E);
+  background: linear-gradient(135deg, #1a0f2a, #2a003e);
   height: 100dvh;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-h1, h2 {
-  font-family: 'Press Start 2P', cursive;
+h1,
+h2 {
+  font-family: "Press Start 2P", cursive;
   color: var(--text-color);
   text-shadow: 0 0 5px var(--text-color), 0 0 10px var(--text-color);
 }
@@ -42,7 +43,8 @@ h1, h2 {
   padding: 20px;
   background: var(--board-bg);
   border-radius: 12px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
 }
 
 /* Board Layout */
@@ -55,7 +57,7 @@ h1, h2 {
   border: 3px solid var(--board-border);
   padding: 15px;
   border-radius: 12px;
-  box-shadow: 0 0 20px var(--board-border)55;
+  box-shadow: 0 0 20px var(--board-border) 55;
   background: #00000080;
   position: relative;
 }
@@ -70,14 +72,15 @@ h1, h2 {
   background: var(--square-bg);
   border: 2px solid var(--board-border);
   border-radius: 12px;
-  color: #FFFFFF;
-  text-shadow: 0 0 5px #FFFFFF;
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
 }
 
 .square:hover {
   background: var(--square-hover);
-  box-shadow: 0 0 10px var(--square-hover), 0 0 20px var(--square-hover), 0 0 40px var(--text-color);
+  box-shadow: 0 0 10px var(--square-hover), 0 0 20px var(--square-hover),
+    0 0 40px var(--text-color);
   transform: scale(1.05);
 }
 
