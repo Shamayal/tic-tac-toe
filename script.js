@@ -43,21 +43,42 @@ squares.forEach((square, index) => {
     square.innerText = currentPlayer;
 
     // Add the class for the player's colour
-    square.classList.add(currentPlayer.toLowerCase());
+    // square.classList.add(currentPlayer.toLowerCase());
 
     // Update the board state
     boardState[index] = currentPlayer;
     console.log(boardState);
 
     // TODO: check if player won
+    // if (checkWinOrDraw()) {
+    //   updateScore();
+    //   gameActive = false;
+    //   return;
+    // }
+
+    if (checkWinOrDraw()) return;
+    // Change player if game continues
     changePlayer();
-   
   });
 });
 
 // function to add win/tie
-function checkWin() {
-
+function checkWinOrDraw() {
+  // for (let pattern of winPatterns) {
+  //   const [a, b, c] = pattern;
+  //   if (boardState[a] === currentPlayer &&
+  //       boardState[b] === currentPlayer &&
+  //       boardState[c] === currentPlayer) {
+  //         return true;
+  //   }
+  // }
+  console.log('checking')
+  if (boardState.every(square => square !== "")) {
+    gameStatus.textContent = "It's a Tie!";
+    gameActive = false;
+    return true;
+  }
+  return false;
 }
 
 // Update score
@@ -88,5 +109,3 @@ resetButton.addEventListener("click", () => {
 
   gameActive = true;
 });
-
-// TODO: check if win/tie and strike outerHeight, update score
