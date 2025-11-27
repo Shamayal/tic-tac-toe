@@ -49,7 +49,7 @@ squares.forEach((square, index) => {
     square.innerText = currentPlayer;
 
     // Add the class for the player's colour
-    // square.classList.add(currentPlayer.toLowerCase());
+    square.classList.add(currentPlayer.toLowerCase());
 
     // Update the board state
     boardState[index] = currentPlayer;
