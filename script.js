@@ -106,6 +106,7 @@ resetButton.addEventListener("click", () => {
 
   squares.forEach((square) => {
     square.innerText = "";
+    square.classList.remove("x", "o");
   });
 
   currentPlayer = "X";
