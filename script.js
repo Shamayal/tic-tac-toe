@@ -78,10 +78,12 @@ function checkWinOrDraw() {
       scores[currentPlayer]++; 
       updateScore();
 
+      resetButton.textContent = "Play Again";
+
       showDisplaySection(
         currentPlayer === 'X' ? xWinsSection : oWinsSection
       );
-      
+
       return true;
     }
   }
@@ -89,6 +91,7 @@ function checkWinOrDraw() {
   if (boardState.every((square) => square !== "")) {
     gameStatus.textContent = "It's a Tie!";
     gameActive = false;
+    resetButton.textContent = "Play Again";
     showDisplaySection(drawSection);
     return true;
   }
@@ -119,6 +122,8 @@ resetButton.addEventListener("click", () => {
   currentPlayer = "X";
   gameStatus.textContent = "Player X's Turn";
   gameActive = true;
+
+  resetButton.textContent = "Reset";
 });
 
 function showDisplaySection(section) {
