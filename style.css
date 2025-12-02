@@ -171,3 +171,16 @@ h2 {
   animation: winGlow 0.8s ease-in-out infinite;
   border-color: var(--winning-glow);
 }
+
+.square.tie {
+  animation: tieFlash 0.6s ease-in-out infinite alternate;
+}
+
+@keyframes tieFlash {
+  0% {
+    box-shadow: 0 0 8px #ffffff;
+  }
+  100% {
+    box-shadow: 0 0 8px #ff00ff
+  }
+}

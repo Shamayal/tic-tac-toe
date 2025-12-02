@@ -84,6 +84,7 @@ function checkWinOrDraw() {
     gameStatus.textContent = "It's a Tie!";
     gameActive = false;
     resetButton.textContent = "Play Again";
+    squares.forEach(square => square.classList.add("tie"));
     return true;
   }
   return false;
@@ -107,7 +108,7 @@ resetButton.addEventListener("click", () => {
 
   squares.forEach((square) => {
     square.innerText = "";
-    square.classList.remove("x", "o", "win");
+    square.classList.remove("x", "o", "win", "tie");
   });
 
   currentPlayer = "X";
