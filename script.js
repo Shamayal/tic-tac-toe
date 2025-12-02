@@ -61,7 +61,8 @@ squares.forEach((square, index) => {
 // function to add win/tie
 function checkWinOrDraw() {
   for (let pattern of winPatterns) {
-    const [a, b, c] = winPatterns[pattern];
+    const [a, b, c] = pattern;
+
     if (
       boardState[a] === currentPlayer &&
       boardState[b] === currentPlayer &&
@@ -69,6 +70,10 @@ function checkWinOrDraw() {
     ) {
       gameStatus.textContent = `${currentPlayer} wins!`;
       gameActive = false;
+
+      squares[a].classList.add("win");
+      squares[b].classList.add("win");
+      squares[c].classList.add("win");
 
       showDisplaySection(
         currentPlayer === 'X' ? xWinsSection : oWinsSection
@@ -107,7 +112,7 @@ resetButton.addEventListener("click", () => {
 
   squares.forEach((square) => {
     square.innerText = "";
-    square.classList.remove("x", "o");
+    square.classList.remove("x", "o", "win");
   });
 
   currentPlayer = "X";

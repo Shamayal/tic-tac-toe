@@ -153,3 +153,21 @@ h2 {
   box-shadow: 0 0 10px var(--text-color), 0 0 20px var(--text-color);
   transform: scale(1.05);
 }
+
+/* Winning Glow Animation */
+@keyframes winGlow {
+  0% {
+    box-shadow: 0 0 8px var(--winning-glow);
+  }
+  50% {
+    box-shadow: 0 0 25px var(--winning-glow), 0 0 50px var(--winning-glow);
+  }
+  100% {
+    box-shadow: 0 0 8px var(--winning-glow);
+  }
+}
+
+.square.win {
+  animation: winGlow 0.8s ease-in-out infinite;
+  border-color: var(--winning-glow);
+}
