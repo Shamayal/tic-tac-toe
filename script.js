@@ -35,8 +35,6 @@ const xWinsSection = document.querySelector(".X-wins");
 const oWinsSection = document.querySelector(".O-wins");
 const drawSection = document.querySelector(".draw");
 
-const strikeLine = document.querySelector(".strike-line");
-
 // function to add marks on squares
 squares.forEach((square, index) => {
   square.addEventListener("click", () => {
@@ -62,8 +60,8 @@ squares.forEach((square, index) => {
 
 // function to add win/tie
 function checkWinOrDraw() {
-  for (let i = 0;i < winPatterns.length; i++) {
-    const [a, b, c] = winPatterns[i];
+  for (let pattern of winPatterns) {
+    const [a, b, c] = winPatterns[pattern];
     if (
       boardState[a] === currentPlayer &&
       boardState[b] === currentPlayer &&
@@ -72,7 +70,6 @@ function checkWinOrDraw() {
       gameStatus.textContent = `${currentPlayer} wins!`;
       gameActive = false;
 
-      drawStrikeLine(i);
       showDisplaySection(
         currentPlayer === 'X' ? xWinsSection : oWinsSection
       );
@@ -90,37 +87,6 @@ function checkWinOrDraw() {
     return true;
   }
   return false;
-}
-
-// Draw the strike line
-function drawStrikeLine(patternIndex) {
-  strikeLine.style.display = "block";
-
-  // Reset position
-  strikeLine.style.top = "0";
-  strikeLine.style.left = "0";
-  strikeLine.style.transform = "none";
-
-  const positions = {
-    // Horizontal (Rows)
-    0: { top: "50px", left: "0", rotate: "0deg" },
-    1: { top: "160px", left: "0", rotate: "0deg" },
-    2: { top: "270px", left: "0", rotate: "0deg" },
-
-    // Vertical (Columns)
-    3: { top: "0", left: "50px", rotate: "90deg" },
-    4: { top: "0", left: "160px", rotate: "90deg" },
-    5: { top: "0", left: "270px", rotate: "90deg" },
-
-    // Diagonals
-    6: { top: "0", left: "0", rotate: "45deg" },
-    7: { top: "0", left: "0", rotate: "-45deg" },
-  };
-
-  const position = positions[patternIndex];
-  strikeLine.style.top = position.top;
-  strikeLine.style.left = position.left;
-  strikeLine.style.transform = `rotate(${position.rotate})`;
 }
 
 // Update score

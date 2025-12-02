@@ -84,22 +84,6 @@ h2 {
   transform: scale(1.05);
 }
 
-/* Strike */
-.strike-line {
-  position: absolute;
-  width: 100%;
-  height: 6px;
-  background: var(--winning-glow);
-  box-shadow: 0 0 15px var(--winning-glow);
-  top: 0;
-  left: 0;
-  transform-origin: center;
-  display: none;
-  z-index: 5;
-  border-radius: 4px;
-  transition: 0.35s ease;
-}
-
 /* Player Colours */
 .square.x {
   color: var(--playerX-color);
