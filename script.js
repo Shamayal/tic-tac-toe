@@ -75,12 +75,13 @@ function checkWinOrDraw() {
       squares[b].classList.add("win");
       squares[c].classList.add("win");
 
+      scores[currentPlayer]++; 
+      updateScore();
+
       showDisplaySection(
         currentPlayer === 'X' ? xWinsSection : oWinsSection
       );
-
-      scores[currentPlayer]++; 
-      updateScore();
+      
       return true;
     }
   }
