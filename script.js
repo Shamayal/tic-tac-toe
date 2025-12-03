@@ -10,6 +10,13 @@ const resetButton = document.getElementById("resetButton");
 
 let boardState = ["", "", "", "", "", "", "", "", ""];
 
+const playerSelectModal = document.getElementById("playerSelectModal");
+const chooseX = document.getElementById("chooseX");
+const chooseO = document.getElementById("chooseO");
+
+let humanPlayer = "X";
+let computerPlayer = "O";
+
 let currentPlayer = "X";
 
 let scores = {
@@ -30,6 +37,24 @@ const winPatterns = [
   [0, 4, 8],
   [2, 4, 6],
 ];
+
+// Show modal on page load
+window.addEventListener("load", () => {
+  gameActive = false;
+  playerSelectModal.style.display = "flex";
+});
+
+chooseX.addEventListener("click", () => {
+  humanPlayer = "X";
+  computerPlayer = "O";
+  currentPlayer = "X";
+});
+
+chooseO.addEventListener("click", () => {
+  humanPlayer = "O";
+  computerPlayer = "X";
+  currentPlayer = "X";
+});
 
 // function to add marks on squares
 squares.forEach((square, index) => {
