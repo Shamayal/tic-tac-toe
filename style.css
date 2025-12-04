@@ -227,7 +227,7 @@ h2 {
   cursor: pointer;
   border-radius: 12px;
   background: black;
-  /* border: 3px solid var(--board-border); */
+  border: 3px solid var(--board-border);
   transition: 0.2s;
 }
 
