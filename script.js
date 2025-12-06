@@ -49,18 +49,24 @@ chooseX.addEventListener("click", () => {
   computerPlayer = "O";
   currentPlayer = "X";
   console.log("human player is X");
+  startGame();
 });
 
 chooseO.addEventListener("click", () => {
   humanPlayer = "O";
   computerPlayer = "X";
   currentPlayer = "X";
+  startGame();
 });
 
 // function to start game
 function startGame() {
   playerSelectModal.style.display = "none";
   gameActive = true;
+}
+
+function computerMove() {
+  
 }
 
 // function to add marks on squares
