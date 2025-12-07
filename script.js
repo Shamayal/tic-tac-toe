@@ -53,7 +53,6 @@ chooseX.addEventListener("click", () => {
 chooseO.addEventListener("click", () => {
   humanPlayer = "O";
   computerPlayer = "X";
-  console.log("human player is O");
   startGame();
 });
 
@@ -95,7 +94,6 @@ function computerMove() {
 // function to add marks on squares
 squares.forEach((square, index) => {
   square.addEventListener("click", () => {
-    console.log(`Square ${index + 1} clicked by ${currentPlayer}`);
 
     // Prevent overwriting on a square
     if (boardState[index] !== "" || !gameActive || currentPlayer !== humanPlayer) return;
