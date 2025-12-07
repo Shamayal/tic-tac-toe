@@ -56,6 +56,7 @@ chooseO.addEventListener("click", () => {
   humanPlayer = "O";
   computerPlayer = "X";
   currentPlayer = "X";
+  console.log("human player is O");
   startGame();
 });
 
@@ -66,7 +67,7 @@ function startGame() {
 }
 
 function computerMove() {
-  
+  if (!gameActive) return;
 }
 
 // function to add marks on squares
@@ -138,6 +139,11 @@ function updateScore() {
 function changePlayer() {
   currentPlayer = currentPlayer === "X" ? "O" : "X";
   gameStatus.textContent = `Player ${currentPlayer}'s Turn`;
+
+  // call computer move automatically
+  if (currentPlayer === computerPlayer && gameActive) {
+    setTimeout(computerMove, 400);
+  }
 }
 
 // Reset Game
