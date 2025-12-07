@@ -68,6 +68,26 @@ function startGame() {
 
 function computerMove() {
   if (!gameActive) return;
+
+  // Get all empty squares
+  let emptySquares = boardState
+    .map((val, idx) => (val === "" ? idx : null))
+    .filter(v => v !== null);
+
+  // Pick a random empty square
+  let choice = emptySquares[Math.floor(Math.random() * emptySquares.length)];
+
+  // Mark the board
+  boardState[choice] = computerPlayer;
+
+  squares[choice].innerText = computerPlayer;
+  squares[choice].classList.add(computerPlayer.toLowerCase());
+
+  // check win or draw
+  if (checkWinOrDraw()) return;
+
+  // change to human player
+  changePlayer();
 }
 
 // function to add marks on squares
