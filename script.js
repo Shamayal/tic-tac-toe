@@ -47,15 +47,12 @@ window.addEventListener("load", () => {
 chooseX.addEventListener("click", () => {
   humanPlayer = "X";
   computerPlayer = "O";
-  currentPlayer = "X";
-  console.log("human player is X");
   startGame();
 });
 
 chooseO.addEventListener("click", () => {
   humanPlayer = "O";
   computerPlayer = "X";
-  currentPlayer = "X";
   console.log("human player is O");
   startGame();
 });
@@ -64,6 +61,11 @@ chooseO.addEventListener("click", () => {
 function startGame() {
   playerSelectModal.style.display = "none";
   gameActive = true;
+
+  // If player X is computer, game should start immediately
+  if (currentPlayer === computerPlayer) {
+    setTimeout(computerMove, 400);
+  }
 }
 
 function computerMove() {
