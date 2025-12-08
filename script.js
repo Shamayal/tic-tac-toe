@@ -117,6 +117,13 @@ function getBestMove() {
 
   // 3. take center if free
   if (boardState[4] === "") return 4;
+
+  // 4. take a random corner
+  const corners = [0, 2, 6, 8];
+  const freeCorners = corners.filter(i => boardState[i] === "");
+  if (freeCorners.length > 0) {
+    return freeCorners[Math.floor(Math.random() * freeCorners.length)];
+  }
 }
 
 // function to add marks on squares
