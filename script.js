@@ -180,4 +180,8 @@ resetButton.addEventListener("click", () => {
   gameActive = true;
 
   resetButton.textContent = "Reset";
+
+  if (computerPlayer === "X") {
+    setTimeout(computerMove, 400);
+  }
 });
