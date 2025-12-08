@@ -124,6 +124,13 @@ function getBestMove() {
   if (freeCorners.length > 0) {
     return freeCorners[Math.floor(Math.random() * freeCorners.length)];
   }
+
+  // 5. random square
+  const emptySquares = boardState
+    .map((val, idx) => (val === "" ? idx : null))
+    .filter(v => v !== null);
+  
+  return emptySquares[Math.floor(Math.random() * emptySquares.length)];
 }
 
 // function to add marks on squares
