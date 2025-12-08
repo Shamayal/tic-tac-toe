@@ -110,6 +110,10 @@ function getBestMove() {
   // 1. try to win
   let winMove = findWinningMove(computerPlayer);
   if (winMove !== null) return winMove;
+
+  // 2. block human player's winning move
+  let blockMove = findWinningMove(computerPlayer);
+  if (blockMove !== null) return blockMove;
 }
 
 // function to add marks on squares
