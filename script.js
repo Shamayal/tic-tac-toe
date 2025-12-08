@@ -71,16 +71,18 @@ function computerMove() {
   if (!gameActive) return;
 
   // Get all empty squares
-  let emptySquares = boardState
-    .map((val, idx) => (val === "" ? idx : null))
-    .filter(v => v !== null);
+  // let emptySquares = boardState
+  //   .map((val, idx) => (val === "" ? idx : null))
+  //   .filter(v => v !== null);
 
   // Pick a random empty square
-  let choice = emptySquares[Math.floor(Math.random() * emptySquares.length)];
+  // let choice = emptySquares[Math.floor(Math.random() * emptySquares.length)];
+
+  // new logic 
+  let choice = getBestMove();
 
   // Mark the board
   boardState[choice] = computerPlayer;
-
   squares[choice].innerText = computerPlayer;
   squares[choice].classList.add(computerPlayer.toLowerCase());
 
@@ -89,6 +91,26 @@ function computerMove() {
 
   // change to human player
   changePlayer();
+}
+
+function getBestMove() {
+
+  function findWinningMove(player) {
+    for (let pattern of winPatterns) {
+      const [a, b, c] = pattern;
+      const line = [boardState[a], boardState[b], boardState[c]];
+
+      if (line.filter(v => v === player).length === 2 && line.includes("")) {
+        return pattern[line.indexOf("")];
+      }
+    }
+    return null;
+  }
+  // can i win
+  // can human win, block
+  // take middle if free
+  // grab corner
+  // random as last choice
 }
 
 // function to add marks on squares
