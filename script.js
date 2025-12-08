@@ -114,6 +114,9 @@ function getBestMove() {
   // 2. block human player's winning move
   let blockMove = findWinningMove(computerPlayer);
   if (blockMove !== null) return blockMove;
+
+  // 3. take center if free
+  if (boardState[4] === "") return 4;
 }
 
 // function to add marks on squares
