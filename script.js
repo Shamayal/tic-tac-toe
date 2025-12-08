@@ -94,23 +94,22 @@ function computerMove() {
 }
 
 function getBestMove() {
-
+  // helper function to find winning move
   function findWinningMove(player) {
     for (let pattern of winPatterns) {
       const [a, b, c] = pattern;
       const line = [boardState[a], boardState[b], boardState[c]];
-
+      // take 3rd spot to win
       if (line.filter(v => v === player).length === 2 && line.includes("")) {
         return pattern[line.indexOf("")];
       }
     }
     return null;
   }
-  // can i win
-  // can human win, block
-  // take middle if free
-  // grab corner
-  // random as last choice
+
+  // 1. try to win
+  let winMove = findWinningMove(computerPlayer);
+  if (winMove !== null) return winMove;
 }
 
 // function to add marks on squares
