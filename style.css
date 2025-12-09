@@ -84,6 +84,14 @@ h2 {
   transform: scale(1.05);
 }
 
+.square.x:hover,
+.square.o:hover {
+  background: var(--square-bg);
+  box-shadow: none;
+  transform: none;
+  cursor: default;
+}
+
 /* Player Colours */
 .square.x {
   color: var(--playerX-color);
