@@ -87,7 +87,7 @@ function startGame() {
 
   // If player X is computer, game should start immediately
   if (currentPlayer === computerPlayer) {
-    setTimeout(computerMove, 400);
+    setTimeout(computerMove, 800);
   }
 }
 
