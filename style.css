@@ -258,3 +258,32 @@ h2 {
   background: var(--square-hover);
   box-shadow: 0 0 15px white;
 }
+
+/* Difficulty Buttons */
+.difficulty-btn {
+  width: 140px;
+  height: 55px;
+  
+  font-size: 1.2rem;
+  font-family: "Press Start 2P", cursive;
+
+  cursor: pointer;
+  background: var(--square-bg);
+  border: 2px solid var(--board-border);
+  border-radius: 12px;
+
+  color: #ffffff;
+  text-shadow: 0 0 5px #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.difficulty-btn:hover {
+  transform: scale(1.1);
+  background: var(--square-hover);
+  box-shadow: 0 0 12px white;
+}
