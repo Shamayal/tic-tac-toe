@@ -135,12 +135,10 @@ function getBestMove() {
   // 1. try to win
   let winMove = findWinningMove(computerPlayer);
   if (winMove !== null) return winMove;
-  console.log(`winMove = ${winMove}`)
 
   // 2. block human player's winning move
   let blockMove = findWinningMove(humanPlayer);
   if (blockMove !== null) return blockMove;
-    console.log(`blockMove = ${blockMove}`)
 
   // 3. take center if free
   if (boardState[4] === "") return 4;
