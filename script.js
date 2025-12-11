@@ -13,16 +13,15 @@ let boardState = ["", "", "", "", "", "", "", "", ""];
 const playerSelectModal = document.getElementById("playerSelectModal");
 const chooseX = document.getElementById("chooseX");
 const chooseO = document.getElementById("chooseO");
+let humanPlayer = "X";
+let computerPlayer = "O";
+let currentPlayer = "X";
 
 const easy = document.getElementById("easy");
 const hard = document.getElementById("hard");
 easy.style.display = "none";
 hard.style.display = "none";
-
-let humanPlayer = "X";
-let computerPlayer = "O";
-
-let currentPlayer = "X";
+let difficultyLevel = "easy";
 
 let scores = {
   X: 0,
@@ -70,6 +69,17 @@ function showDifficultyOptions() {
   hard.style.display = "inline-block";
 }
 
+// start game after difficulty level chosen
+easy.addEventListener("click", () => {
+  difficultyLevel = "easy";
+  startGame();
+});
+
+hard.addEventListener("click", () => {
+  difficultyLevel = "hard";
+  startGame();
+});
+
 // function to start game
 function startGame() {
   playerSelectModal.style.display = "none";
@@ -84,16 +94,7 @@ function startGame() {
 function computerMove() {
   if (!gameActive) return;
 
-  // Get all empty squares
-  // let emptySquares = boardState
-  //   .map((val, idx) => (val === "" ? idx : null))
-  //   .filter(v => v !== null);
-
-  // Pick a random empty square
-  // let choice = emptySquares[Math.floor(Math.random() * emptySquares.length)];
-
-  // new logic 
-  let choice = getBestMove();
+  let choice = difficultyLevel === "easy" ? easyMove() : getBestMove();
 
   // Mark the board
   boardState[choice] = computerPlayer;
@@ -105,6 +106,16 @@ function computerMove() {
 
   // change to human player
   changePlayer();
+}
+
+function easyMove() {
+  // get all empty squares
+  let emptySquares = boardState
+    .map((val, idx) => (val === "" ? idx : null))
+    .filter(v => v !== null);
+
+  // pick a random empty square
+  return emptySquares[Math.floor(Math.random() * emptySquares.length)];
 }
 
 function getBestMove() {
@@ -130,7 +141,6 @@ function getBestMove() {
   let blockMove = findWinningMove(humanPlayer);
   if (blockMove !== null) return blockMove;
     console.log(`blockMove = ${blockMove}`)
-
 
   // 3. take center if free
   if (boardState[4] === "") return 4;
