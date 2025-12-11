@@ -251,6 +251,6 @@ resetButton.addEventListener("click", () => {
   resetButton.textContent = "Reset";
 
   if (computerPlayer === "X") {
-    setTimeout(computerMove, 400);
+    setTimeout(computerMove, 800);
   }
 });
