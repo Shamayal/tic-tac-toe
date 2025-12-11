@@ -231,7 +231,7 @@ function changePlayer() {
 
   // call computer move automatically
   if (currentPlayer === computerPlayer && gameActive) {
-    setTimeout(computerMove, 400);
+    setTimeout(computerMove, 800);
   }
 }
 
