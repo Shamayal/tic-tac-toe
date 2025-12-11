@@ -14,6 +14,11 @@ const playerSelectModal = document.getElementById("playerSelectModal");
 const chooseX = document.getElementById("chooseX");
 const chooseO = document.getElementById("chooseO");
 
+const easy = document.getElementById("easy");
+const hard = document.getElementById("hard");
+easy.style.display = "none";
+hard.style.display = "none";
+
 let humanPlayer = "X";
 let computerPlayer = "O";
 
@@ -47,14 +52,23 @@ window.addEventListener("load", () => {
 chooseX.addEventListener("click", () => {
   humanPlayer = "X";
   computerPlayer = "O";
-  startGame();
+  showDifficultyOptions();
 });
 
 chooseO.addEventListener("click", () => {
   humanPlayer = "O";
   computerPlayer = "X";
-  startGame();
+  showDifficultyOptions();
 });
+
+// function to let player choose difficulty level
+function showDifficultyOptions() {
+  chooseX.style.display = "none";
+  chooseO.style.display = "none";
+
+  easy.style.display = "inline-block";
+  hard.style.display = "inline-block";
+}
 
 // function to start game
 function startGame() {
