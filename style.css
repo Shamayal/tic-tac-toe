@@ -189,7 +189,7 @@ h2 {
     box-shadow: 0 0 8px #ffffff;
   }
   100% {
-    box-shadow: 0 0 8px #ff00ff
+    box-shadow: 0 0 8px #ff00ff;
   }
 }
 
@@ -239,7 +239,7 @@ h2 {
   color: #ffffff;
   text-shadow: 0 0 5px #ffffff;
   transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
-  line-height: 100px; 
+  line-height: 100px;
   padding-left: 4px;
 }
 
@@ -263,7 +263,7 @@ h2 {
 .difficulty-btn {
   width: 140px;
   height: 55px;
-  
+
   font-size: 1.2rem;
   font-family: "Press Start 2P", cursive;
 

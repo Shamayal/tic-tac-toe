@@ -112,7 +112,7 @@ function easyMove() {
   // get all empty squares
   let emptySquares = boardState
     .map((val, idx) => (val === "" ? idx : null))
-    .filter(v => v !== null);
+    .filter((v) => v !== null);
 
   // pick a random empty square
   return emptySquares[Math.floor(Math.random() * emptySquares.length)];
@@ -125,7 +125,7 @@ function getBestMove() {
       const [a, b, c] = pattern;
       const line = [boardState[a], boardState[b], boardState[c]];
       // take 3rd spot to win
-      if (line.filter(v => v === player).length === 2 && line.includes("")) {
+      if (line.filter((v) => v === player).length === 2 && line.includes("")) {
         return pattern[line.indexOf("")];
       }
     }
@@ -145,7 +145,7 @@ function getBestMove() {
 
   // 4. take a random corner
   const corners = [0, 2, 6, 8];
-  const freeCorners = corners.filter(i => boardState[i] === "");
+  const freeCorners = corners.filter((i) => boardState[i] === "");
   if (freeCorners.length > 0) {
     return freeCorners[Math.floor(Math.random() * freeCorners.length)];
   }
@@ -153,17 +153,21 @@ function getBestMove() {
   // 5. random square
   const emptySquares = boardState
     .map((val, idx) => (val === "" ? idx : null))
-    .filter(v => v !== null);
-  
+    .filter((v) => v !== null);
+
   return emptySquares[Math.floor(Math.random() * emptySquares.length)];
 }
 
 // function to add marks on squares
 squares.forEach((square, index) => {
   square.addEventListener("click", () => {
-
     // Prevent overwriting on a square
-    if (boardState[index] !== "" || !gameActive || currentPlayer !== humanPlayer) return;
+    if (
+      boardState[index] !== "" ||
+      !gameActive ||
+      currentPlayer !== humanPlayer
+    )
+      return;
 
     // Set the text
     square.innerText = currentPlayer;
@@ -197,7 +201,7 @@ function checkWinOrDraw() {
       squares[b].classList.add("win");
       squares[c].classList.add("win");
 
-      scores[currentPlayer]++; 
+      scores[currentPlayer]++;
       updateScore();
 
       resetButton.textContent = "Play Again";
@@ -210,7 +214,7 @@ function checkWinOrDraw() {
     gameStatus.textContent = "It's a Tie!";
     gameActive = false;
     resetButton.textContent = "Play Again";
-    squares.forEach(square => square.classList.add("tie"));
+    squares.forEach((square) => square.classList.add("tie"));
     return true;
   }
   return false;
